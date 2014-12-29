@@ -1,0 +1,169 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  text-align:center;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.add {
+	background: none repeat scroll 0 0 #2C4762;
+	display : inline-block;
+    border-radius: 10px;
+    padding: 0;
+	min-width: 710px;
+	max-height:800px;
+	overflow-y:scroll;
+}
+
+
+.add .add-task {
+	background: none repeat scroll 0 0 #FFFFFF;
+	display : inline-block;
+    	border-radius: 6px;
+    	margin: 14px 14px;
+    	padding: 0;
+	text-align : center;
+	float: center;
+	width: 96%;
+	height: 40px
+}
+
+/*TODO list specific styling*/
+.todo {
+	background: none repeat scroll 0 0 #2C4762;
+	display : inline-block;
+    border-radius: 6px;
+    padding: 0;
+	min-width: 700px;
+	max-height:800px;
+	overflow-y:scroll;
+	border
+}
+
+.todo table {
+	min-width: 700px;	
+}
+
+.todo .task {
+	background: none repeat scroll 0 0 #FAFAFF;
+	display : inline-block;
+    	border-radius: 6px;
+    	margin: 14px 14px;
+    	padding: 0;
+	text-align : center;
+	float: center;
+	width: 96%;
+}
+
+.todo .task-check {
+	 padding: 5px;
+	 width: 40px;
+     height: 40px;
+     
+}
+
+.todo .task-check:checked {
+	 padding: 5px;
+	 width: 40px;
+     height: 40px;
+    
+}
+
+/*Completed task specific*/
+.completed {
+	background: none repeat scroll 0 0 #9B9DA0;
+	display : inline-block;
+    border-radius: 6px;
+    padding: 0;
+	min-width: 700px;
+	max-height:800px;
+	overflow-y:scroll;
+	border
+}
+
+.completed table {
+	min-width: 700px;	
+}
+
+.completed .task {
+	background: none repeat scroll 0 0 #FAFAFF;
+	display : inline-block;
+    border-radius: 2px;
+   	margin: 14px 14px;
+   	padding: 0;
+	text-align : center;
+	float: center;
+	width: 96%;
+	text-decoration: line-through;
+}
+
+.completed .task-check {
+	 padding: 5px;
+	 width: 40px;
+     	height: 15px;
+     
+}
+
+.completed .task-check:checked {
+	 padding: 5px;
+	 width: 40px;
+     height: 15px;
+    
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+

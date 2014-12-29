@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>TO-DO</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+	
+	 <script id="task-template" type="text/x-handlebars-template">
+		{{#if newTask}}
+			<tr class = "task" id = task{{newTask.id}}>
+	 			<td class="vcenter task-check">
+					<input type="checkbox" id="status{{newTask.id}}" value="{{newTask.status}}" onclick = "td.task.toggle({{newTask.id}});"/>
+				</td>
+  				<td>{{newTask.description}}</td>
+			</tr>	
+		{{/if}}
+	</script>
+
+	<script id = "todo-list-template" type="text/x-handlebars-template">
+		<div class="container">
+      		<div class="header">
+       			 <h3 class="text-muted">TO-DO</h3>
+      		</div>
+		<div class="add">
+			<input type="text" maxlength="99" class = "add-task" id="add-task" placeholder="Add a Task......" onchange ="td.task.add()"/>		
+		</div>
+     		<div id = "todo" class="todo">
+     			
+     			<table>
+		    		<tbody id = "todoTableBodyDiv">
+						{{#if tasks}}
+							{{#each tasks}}
+									<tr class = "task" id = task{{this.id}}>
+		 								<td class="vcenter task-check">
+											<input type="checkbox" id = status{{this.id}} value={{this.status}} checked={{this.status}}  onclick = "td.task.toggle({{this.id}});"/>
+										</td>
+  										<td>{{this.description}}</td>
+									</tr>
+							{{/each}}
+						{{/if}}
+		    		</tbody>
+		 		</table>
+     		</div>
+	</script>
+   
+   <script id = "completed-list-template" type="text/x-handlebars-template">
+			<div class="container">
+				<h3 id="complete-title" class="text-muted" style="display:none">My Completed Tasks..</h3>
+     				<div id = "completed" class="completed">
+     					<table>
+		    				<tbody id = "completedTableDiv">
+								{{#if tasks}}
+									{{#each tasks}}
+										<tr class = "task" id = task{{this.id}}>
+		 									<td class="vcenter task-check">
+												<input type="checkbox" disabled={{this.status}} id = status{{this.id}} value={{this.status}} checked={{this.status}}  
+													onclick = "td.task.toggle({{this.id}});"/>
+											</td>
+  											<td>{{this.description}}</td>
+										</tr>
+									{{/each}}
+								{{/if}}
+		    				</tbody>
+		 			</table>
+     			</div>
+			</div>
+	</script>
+   
+  </head>
+  <body id = "todo-body">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/handlebars/handlebars.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    
+    <!-- endbower -->
+    <!-- endbuild -->
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
